@@ -24,8 +24,12 @@ class Tile:
         print("Items in the current area: ", self.AvailableItems)
     def PrintCaption(self):
         print("    ", self.Caption)
+        
+class Chest:
+    def __init__(self):
+        self.Open = False
 
-StartTile = Tile([0, 0], ["Spoon", "Stick"], "Start Space")
+StartTile = Tile([0, 0], ["Spoon", "Stick", "Chest"], "Start Space")
 Tile1 = Tile([0, 1], ["Nothing"], "1 Space North of Start")
 AllTiles = [StartTile, Tile1]
 StartTile.ShowAvailableItems()
@@ -61,6 +65,12 @@ def TakeItem(var, CurrentTile):
             return 0
     print("    item not found...")     
 
+def Open(var, CurrentTile):
+    for Item in CurrentTile.AvailableItems:
+        if Item.casefold in "Chest".casefold():
+            
+            
+
 def AllVerbs(CurrentTile, Verbs, var):
     for Verb in Verbs:
         if Verb == "show":
@@ -71,6 +81,8 @@ def AllVerbs(CurrentTile, Verbs, var):
             print("attack")
         if Verb == "drop":
             print("drop")
+        if Verb == "open":
+            
 
 def With():
     print("you used a with!")
