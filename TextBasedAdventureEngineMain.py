@@ -75,11 +75,12 @@ def CompleteAction(CurrentTile, var):
     
     AllVerbs(CurrentTile, Verb, var)
     
-    if IsWith == True:
-        With()
-    
     if CheckQuickNouns(Noun, Plc) != 0:
         StartNewRound()
+        
+    
+    if IsWith == True:
+        With()
     
 
 StartNewRound()

@@ -41,21 +41,73 @@ def FindVerbs(var):
 
 def FindNouns(var):
     Noun = ["N/A"]
-    if "North".casefold() in var.casefold():
+    #North
+    if TestIn("North", var) == True:
         Noun.append("N")
     
+    if TestIn("Forward", var) == True:
+        Noun.append("N")
+    
+    
+    #East
     if TestIn("East", var) == True:
         Noun.append("E")
     
+    if TestIn("Right", var) == True:
+        Noun.append("E")
+    
+    
+    
+    #South
     if TestIn("South", var) == True:
         Noun.append("S")
     
+    if TestIn("Back", var) == True:
+        Noun.append("S")
+    
+    
+    
+    #West
     if TestIn("West", var) == True:
         Noun.append("W")
     
-    if TestIn("Equipment", var) == True:
+    if TestIn("Left", var) == True:
+        Noun.append("W")
+    
+    
+    
+    #Equipment
+    if TestIn("Items", var) == True:
+        Noun.append("Equipment")
+
+    if TestIn("Gear", var) == True:
         Noun.append("Equipment")
     
+    if TestIn("Tools", var) == True:
+        Noun.append("Equipment")
+    
+    if TestIn("Supplies", var) == True:
+        Noun.append("Equipment")
+    
+    if TestIn("Apparatus", var) == True:
+        Noun.append("Equipment")
+    
+    if TestIn("Kit", var) == True:
+        Noun.append("Equipment")
+    
+    if TestIn("Outfit", var) == True:
+        Noun.append("Equipment")
+    
+    if TestIn("Pack", var) == True:
+        Noun.append("Equipment")
+    
+    if TestIn("Loot", var) == True:
+        Noun.append("Equipment")
+    
+    if TestIn("Bag", var) == True:
+        Noun.append("Equipment")
+    
+    #End the Game
     if "end".casefold() in var.casefold():
         Noun.append("End")
     
