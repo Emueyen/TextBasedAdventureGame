@@ -22,6 +22,8 @@ clock = pygame.time.Clock()
 var = ""
 Characters = pygame.image.load("Font.png")
 
+# I don't normally use AI, but I did use Gemini here to help set up this image a bit faster
+
 # Initialize a dictionary to hold your images
 LetterImages = {}
 
