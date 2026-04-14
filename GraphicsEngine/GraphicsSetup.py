@@ -23,7 +23,7 @@ var = ""
 Characters = pygame.image.load("Font.png")
 WordsPerLine = WIDTH/32 - 1
 
-TotalAvailableLines = HEIGHT/32
+TotalAvailableLines = HEIGHT/32-4
 
 # I don't normally use AI, but I did use Gemini here to help set up this image a bit faster
 
@@ -115,9 +115,12 @@ def PrintCommandLine(CL):
         
 
 
-CommandLine = ["\1 Command Line again", 
-               "\2 Command line test two line again", 
-               "\2 Command Line test two line"]
+CommandLine = ["\1 Command Line first", 
+               "\1 Command line test", 
+               "\1 Command Line test",
+               "\1 Command Line"]
+for i in range(0, 20):
+    CommandLine.append("\1 Command Line")
 
 
 while running == True:
@@ -135,7 +138,7 @@ while running == True:
             running = False
     
     screen.fill("deepskyblue")
-    
+    print("Total Lines available: ", TotalAvailableLines)
        
     
     if PrintVariable(var, 32, 664) == True:
@@ -146,8 +149,6 @@ while running == True:
         else:
             CommandLine.insert(0, ("\1" + var))
         var = ""
-    
-    
     
     PrintCommandLine(CommandLine)
     
